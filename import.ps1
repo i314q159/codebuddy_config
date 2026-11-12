@@ -19,6 +19,22 @@ if ($Only -in @('All', 'Extensions')) {
         }
         Write-Host "Extensions: $($exts.Count) processed, $($failed.Count) failed"
         if ($failed.Count) { $failed | ForEach-Object { Write-Warning "Failed: $_" } }
+
+        # Uninstall extensions installed but not present in extensions.txt
+        $desired = @($exts | ForEach-Object { $_.Trim().ToLower() } | Where-Object { $_ })
+        $installed = @(& $Code --list-extensions | Where-Object { $_.Trim() } | ForEach-Object { $_.Trim() })
+        $extra = @($installed | Where-Object { $desired -notcontains $_.ToLower() })
+        if ($extra.Count) {
+            $rmFailed = @()
+            foreach ($e in $extra) {
+                Write-Host "Uninstalling extra: $e"
+                & $Code --uninstall-extension $e | Out-Null
+                if ($LASTEXITCODE -ne 0) { $rmFailed += $e }
+            }
+            Write-Host "Extras: $($extra.Count) found, $($rmFailed.Count) failed"
+            if ($rmFailed.Count) { $rmFailed | ForEach-Object { Write-Warning "Failed to uninstall: $_" } }
+        }
+        else { Write-Host 'Extras: 0 found, nothing to uninstall' }
     }
     else { Write-Warning 'extensions.txt not found, skipping extensions.' }
 }

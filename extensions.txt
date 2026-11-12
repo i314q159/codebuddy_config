@@ -30,6 +30,3 @@ rust-lang.rust-analyzer
 sumneko.lua
 tamasfe.even-better-toml
 timonwong.shellcheck
-vscjava.vscode-java-debug
-vscjava.vscode-java-dependency
-vscjava.vscode-maven
