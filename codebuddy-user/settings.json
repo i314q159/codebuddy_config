@@ -1,4 +1,5 @@
 {
+  "rust-analyzer.server.path": "C:\\Users\\zjuche\\AppData\\Local\\Microsoft\\WinGet\\Links\\rust-analyzer.exe",
   "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: LLVM, IndentWidth: 4, TabWidth: 4, UseTab: Never, ColumnLimit: 0, }",
   "cmake.showConfigureWithDebuggerNotification": false,
   "cmake.autoDetectSourceDirectory": false,
@@ -59,7 +60,6 @@
   "workbench.editor.enablePreview": false,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.secondarySideBar.defaultVisibility": "hidden",
-  "workbench.sideBar.location": "right",
   "workbench.startupEditor": "none",
   "[c]": {
     "editor.insertSpaces": true,
@@ -93,8 +93,11 @@
   "cmake.configureOnOpen": false,
   "python.createEnvironment.trigger": "off",
   "workbench.editorAssociations": {
+    "{hexdiff}:/**/*.*": "hexEditor.hexedit",
     "*.zip": "zip.redirectToTree",
-    "*.vsix": "zip.redirectToTree"
+    "*.vsix": "zip.redirectToTree",
+    "*.html": "codebuddy.html.previewEditor",
+    "*.htm": "codebuddy.html.previewEditor"
   },
   "python.languageServer": "Default",
   "editor.codeActionsOnSave": {
