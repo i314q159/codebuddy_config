@@ -56,7 +56,7 @@
   "terminal.integrated.shellIntegration.history": 0,
   "update.showReleaseNotes": false,
   "window.restoreWindows": "none",
-  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.colorTheme": "GitHub Dark",
   "workbench.editor.enablePreview": false,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.secondarySideBar.defaultVisibility": "hidden",
@@ -97,7 +97,9 @@
     "*.zip": "zip.redirectToTree",
     "*.vsix": "zip.redirectToTree",
     "*.html": "codebuddy.html.previewEditor",
-    "*.htm": "codebuddy.html.previewEditor"
+    "*.htm": "codebuddy.html.previewEditor",
+    "*.md": "vscode.markdown.preview.editor",
+    "*.markdown": "vscode.markdown.preview.editor"
   },
   "python.languageServer": "Default",
   "editor.codeActionsOnSave": {
